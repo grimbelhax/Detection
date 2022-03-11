@@ -6,7 +6,7 @@
 ---------
 
 
-### Log TGS request [4679](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4769) request with encryption type 0x17,0x18 [RC4](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4769). 
+### Log TGS request [4679](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4769) request with encryption type 0x17,0x18 [RC4](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4769) and TicketOptions set to 0x40810000.
 
 #### Custom KQL Rule.
 
