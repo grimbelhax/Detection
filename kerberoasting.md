@@ -72,9 +72,9 @@ Count TGS requests [4679](https://www.ultimatewindowssecurity.com/securitylog/en
 
 ### Tool Indicators
 
-- Ticketoptionen: 0x40800000 could be an indicator for a feature of rubeues.exe kerberoast. 
-- Ticketoptionen: 0x40800010 could be an indicator for a feature of rubeues.exe kerberoast /tgtdeleg. 
-- Ticketoptionen: 0x40810000 could be an indicator for a feature of Invoke-Kerberoast (Powerview). 
+- Ticketoptionen: `0x40800000` could be an indicator for a feature of `rubeues.exe kerberoast`. 
+- Ticketoptionen: `0x40800010` could be an indicator for a feature of `rubeues.exe kerberoast /tgtdeleg`. 
+- Ticketoptionen: `0x40810000` could be an indicator for a feature of `Invoke-Kerberoast` (Powerview). 
 
 ## References
 
