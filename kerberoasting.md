@@ -6,9 +6,11 @@
 ---------
 
 
-### Log TGS request [4679](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4769) request with encryption type 0x17,0x18 [RC4](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4769) and TicketOptions set to 0x40810000.
+### Kerberoast (RC4)
 
-#### Custom KQL Rule.
+Log TGS request [4679](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4769) with encryption type 0x17,0x18 [RC4](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4769) and TicketOptions set to 0x40810000.
+
+#### Custom KQL Rule
 
 ```sql
 (winlog.channel:"Security" AND (winlog.event_id:"4769" AND winlog.event_data.TicketOptions:("0x40810000" OR "0x40800000")  AND winlog.event_data.TicketEncryptionType:("0x17" OR "0x18")) AND (NOT (winlog.event_data.ServiceName:$*)))
@@ -20,11 +22,16 @@
 
 ---------
 
-### Count TGS requests [4679](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4769) request with encryption type 0x11,0x12 [AES](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4769). 
+### Kerberoast (AES)
+Count TGS requests [4679](https://www.ultimatewindowssecurity.com/securitylog/encyclopedia/event.aspx?eventID=4769) with encryption type 0x11,0x12 [AES](https://docs.microsoft.com/en-us/windows/security/threat-protection/auditing/event-4769). 
 
+
+**Must be set as threshold rule.**
 ```sql
-(@timestamp >= "now-120m" and winlog.channel:"Security" AND (winlog.event_id:"4769" AND winlog.event_data.TicketOptions:"0x40810000" AND winlog.event_data.TicketEncryptionType:"0x17") AND (NOT (winlog.event_data.ServiceName:$*)))
+(winlog.channel:"Security" AND (winlog.event_id:"4769" AND winlog.event_data.TicketOptions:("0x40810000" OR "0x40800000")  AND winlog.event_data.TicketEncryptionType:("0x11" OR "0x12")) AND (NOT (winlog.event_data.ServiceName:$*)))
 ```
+> Set the threshold and schedule on the volume of traffic within the infrastructure. 
+
 
 
 ---------
