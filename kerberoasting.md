@@ -11,10 +11,12 @@
 #### Custom KQL Rule.
 
 ```sql
-(winlog.channel:"Security" AND (winlog.event_id:"4769" AND winlog.event_data.TicketOptions:"0x40810000" AND winlog.event_data.TicketEncryptionType:"0x17") AND (NOT (winlog.event_data.ServiceName:$*)))
+(winlog.channel:"Security" AND (winlog.event_id:"4769" AND winlog.event_data.TicketOptions:("0x40810000" OR "0x40800000")  AND winlog.event_data.TicketEncryptionType:("0x17" OR "0x18")) AND (NOT (winlog.event_data.ServiceName:$*)))
 ```
 
-[Sigma](https://github.com/SigmaHQ/sigma/blob/master/rules/windows/builtin/security/win_susp_rc4_kerberos.yml)
+> Ticketoptionen: 0x40800000 could be an indicator for a feature of rubeues.exe. 
+
+[Default sigma rule](https://github.com/SigmaHQ/sigma/blob/master/rules/windows/builtin/security/win_susp_rc4_kerberos.yml)
 
 ---------
 
