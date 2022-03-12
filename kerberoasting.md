@@ -40,7 +40,6 @@ Count TGS requests [4679](https://www.ultimatewindowssecurity.com/securitylog/en
 (winlog.channel:"Security" AND (winlog.event_id:"4769" AND winlog.event_data.TicketOptions:("0x40810000" OR "0x40800000")  AND winlog.event_data.TicketEncryptionType:("0x17" OR "0x18")) AND (NOT (winlog.event_data.ServiceName:$*)))
 ```
 > Set the threshold and schedule on the volume of traffic within the infrastructure. 
-> Ticketoptionen: 0x40800000 could be an indicator for a feature of rubeues.exe. 
 
 
 ---------
@@ -68,6 +67,15 @@ Count TGS requests [4679](https://www.ultimatewindowssecurity.com/securitylog/en
 ```
 
 ---------
+
+## Further Investigation
+
+### Tool Indicators
+
+- Ticketoptionen: 0x40800000 could be an indicator for a feature of rubeues.exe kerberoast. 
+- Ticketoptionen: 0x40800010 could be an indicator for a feature of rubeues.exe kerberoast /tgtdeleg. 
+- Ticketoptionen: 0x40810000 could be an indicator for a feature of Invoke-Kerberoast (Powerview). 
+
 ## References
 
 - [adsecurity.org](https://adsecurity.org/?p=3458)
