@@ -4,14 +4,14 @@
 
 ### Prior Knowledge
 
-- In a Domain with Windows Server 2016 and older as Domain Controller enabling AES encryption is not enforced.
-- In a Domain with Windows Server 2019 as Domain Controller enabling AES encryption is enforced. It returns highest encryption service account supports.
+- In a Domain with Windows Server 2016 and older as Domain Controller enabled AES encryption is not enforced.
+- In a Domain with Windows Server 2019 as Domain Controller enabled AES encryption is enforced. It returns highest encryption which service account supports.
 
 
 ### System Pre-Setup
 ---------
 
-- To enforce AES on a specific account setting `This account supports Kerberos AES 128/256 bit encryption` in Active Directory Users and Computers user properties.
+- To enforce AES on a specific account: `This account supports Kerberos AES 128/256 bit encryption` in Active Directory Users and Computers user properties.
 
 - Enable kerberos eventlogs on the DC.
 ```
