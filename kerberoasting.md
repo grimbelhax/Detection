@@ -1,4 +1,4 @@
-# Kerberoasting
+# Kerberoasting 
 
 ## Detection concepts (Elastic)
 
