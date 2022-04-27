@@ -4,6 +4,7 @@ https://source.chromium.org/chromium/chromium/src/+/main:components/safe_browsin
 
 # Extensions that should be blocked by mail gateways
 
+```
 accdb
 accde
 ace
@@ -206,3 +207,4 @@ xltm
 xml
 xnk
 xsl
+```
