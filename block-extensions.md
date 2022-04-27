@@ -1,3 +1,9 @@
+# Extensions chrome lists as not dangerous
+
+https://source.chromium.org/chromium/chromium/src/+/main:components/safe_browsing/content/resources/download_file_types.asciipb
+
+# Extensions that should be blocked by mail gateways
+
 accdb
 accde
 ace
